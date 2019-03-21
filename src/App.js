@@ -11,13 +11,11 @@ import PageNon from "./Components/PageNon";
         <div className="container">
             <BrowserRouter>
                 <Header />
-
                 <Route exact path='/' render={ () => <Gallery/>}/>
                 <Route path='/dogs' render={ () => <Gallery search={'dogs'}/> } />
                 <Route path='/computers' render={ () => <Gallery search={'computers'}/> } />
                 <Route path='/cats' render={ () => <Gallery search={'cats'}/>  } />
                 <Route component={PageNon}/>
-
                 </BrowserRouter>
                 </div>
 
