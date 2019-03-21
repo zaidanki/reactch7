@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route , Switch} from "react-router-dom";
 import Header from "./Components/Header";
 import Gallery from "./Components/Gallery";
+import PageNon from "./Components/PageNon";
 
  class App extends Component {
   render() {
@@ -10,10 +11,13 @@ import Gallery from "./Components/Gallery";
         <div className="container">
             <BrowserRouter>
                 <Header />
+
                 <Route exact path='/' render={ () => <Gallery/>}/>
-                <Route path='/cats' render={ () => <Gallery search='cats'/>  } />
-                <Route path='/dogs' render={ () => <Gallery search='dogs' valS={1} /> } />
-                <Route path='/computers' render={ () => <Gallery search='computers' valS={1} /> } />
+                <Route path='/dogs' render={ () => <Gallery search={'dogs'}/> } />
+                <Route path='/computers' render={ () => <Gallery search={'computers'}/> } />
+                <Route path='/cats' render={ () => <Gallery search={'cats'}/>  } />
+                <Route component={PageNon}/>
+
                 </BrowserRouter>
                 </div>
 
