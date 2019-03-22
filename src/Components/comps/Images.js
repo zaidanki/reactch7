@@ -1,5 +1,7 @@
 import React from 'react'
 
+// How my images are going to be rendered
+
 const Images = (props) => {
     return (
             <li>

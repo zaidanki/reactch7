@@ -1,11 +1,13 @@
 import React from 'react'
 
+// this is for loading, and showing results (if results are there
+
 const NoImg = (props) => {
     let textHtml;
     if(props.loading){
         textHtml = <h3>Loading...</h3>
     } else {
-        textHtml = <h3>No Results Found</h3> + <p>You search did not return any results. Please try again.</p>
+        textHtml = <h3>No Results Found</h3>
     }
 
     return (

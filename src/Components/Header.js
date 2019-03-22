@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import Nav from "./comps/Nav";
 
+//this is my header, which includes the searchbar
+
 
 class Header extends Component {
 
-
+    // the state that tracks the value of the search text
     state = {
         searchText: ''
     };
@@ -12,6 +14,8 @@ class Header extends Component {
     onSearchChange = e => {
         this.setState({ searchText: e.target.value });
     };
+
+    // handles the "Submit" feature, and uese the renderImg function that i created in app.js
 
     handleSubmit = e => {
         e.preventDefault();
@@ -21,6 +25,8 @@ class Header extends Component {
 
     render() {
         return (
+
+            // this is how it is going to be rendered!  + the <Nav />
             <header>
                 <h1>Chapter 7 React App</h1>
                 <form className="search-form" onSubmit={this.handleSubmit}>
