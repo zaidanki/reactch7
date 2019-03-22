@@ -16,7 +16,6 @@ class Gallery extends Component {
     // when using nav links, it updates. hence forth the pictures update
     componentDidUpdate(prevProps) {
         if(this.props.search !== prevProps.search) {
-            console.log(this.props.location)
             this.props.renderImg(this.props.search)
         }
     }
