@@ -4,12 +4,33 @@ import Nav from "./comps/Nav";
 
 class Header extends Component {
 
+
+    state = {
+        searchText: ''
+    };
+
+    onSearchChange = e => {
+        this.setState({ searchText: e.target.value });
+    };
+
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.search(this.query.value);
+        e.currentTarget.reset();
+    };
+
     render() {
         return (
             <header>
                 <h1>Chapter 7 React App</h1>
-                <form className="search-form">
-                    <input type="search" name="search" placeholder="Search" required/>
+                <form className="search-form" onSubmit={this.handleSubmit}>
+                    <input type="search"
+                           name="search"
+                           placeholder="Search"
+                           onChange={this.onSearchChange}
+                           ref={input => this.query = input}
+                           required/>
+
                     <button type="submit" className="search-button">
                         <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -17,6 +38,7 @@ class Header extends Component {
                             <path d="M0 0h24v24H0z" fill="none"/>
                         </svg>
                     </button>
+
                 </form>
 
                 <Nav/>
