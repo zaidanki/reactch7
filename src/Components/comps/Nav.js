@@ -10,7 +10,7 @@ const Nav = () => {
                     <ul>
                         <li><NavLink to='/cats'><div>Cats</div></NavLink></li>
                         <li><NavLink to='/dogs'>Dogs</NavLink></li>
-                        <li><NavLink to='/computers'>Computers</NavLink></li>
+                        <li><NavLink to='/comp'>Computers</NavLink></li>
                     </ul>
                 </nav>
             </div>
